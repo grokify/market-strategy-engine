@@ -206,9 +206,9 @@ func (e *MultiMarketEngine) computeCrossMarketComparison(mma *model.MultiMarketA
 				ss, ok := segmentData[comp.SegmentID]
 				if !ok {
 					ss = &model.SegmentScore{
-						SegmentID:       comp.SegmentID,
-						SegmentName:     comp.SegmentName,
-						BestMarketScore: -1,
+						SegmentID:        comp.SegmentID,
+						SegmentName:      comp.SegmentName,
+						BestMarketScore:  -1,
 						WorstMarketScore: 101,
 					}
 					segmentData[comp.SegmentID] = ss

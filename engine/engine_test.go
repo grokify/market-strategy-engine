@@ -236,9 +236,9 @@ func TestSeverityComputation(t *testing.T) {
 	}{
 		{0.0, model.GapSeverityNone},
 		{0.4, model.GapSeverityLow},
-		{0.5, model.GapSeverityMedium},  // 0.5 is not < 0.5, so medium
+		{0.5, model.GapSeverityMedium}, // 0.5 is not < 0.5, so medium
 		{1.0, model.GapSeverityMedium},
-		{1.5, model.GapSeverityHigh},    // 1.5 is not < 1.5, so high
+		{1.5, model.GapSeverityHigh}, // 1.5 is not < 1.5, so high
 		{2.0, model.GapSeverityHigh},
 		{2.5, model.GapSeverityCritical}, // 2.5 is not < 2.5, so critical
 	}

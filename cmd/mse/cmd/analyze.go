@@ -241,7 +241,7 @@ func saveAnalysis(a *model.Analysis, filename string) error {
 		}
 	}
 
-	if err := os.WriteFile(filename, data, 0o644); err != nil {
+	if err := os.WriteFile(filename, data, 0600); err != nil {
 		return fmt.Errorf("failed to write file: %w", err)
 	}
 

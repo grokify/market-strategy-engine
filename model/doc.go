@@ -20,7 +20,7 @@
 //
 // # Data Flow
 //
-// Reference Data → Scores → Weights → Gap Analysis → Readiness → Priorities
+// # Reference Data → Scores → Weights → Gap Analysis → Readiness → Priorities
 //
 // External data sources (Gartner, G2, internal assessments) feed into capability
 // scores. Segment-specific weights determine importance. The engine computes

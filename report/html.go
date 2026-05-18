@@ -22,22 +22,22 @@ func NewHTMLReport(a *model.Analysis) *HTMLReport {
 // Write writes the HTML report to the given writer.
 func (r *HTMLReport) Write(w io.Writer) error {
 	tmpl, err := template.New("report").Funcs(template.FuncMap{
-		"readinessColor":    readinessColor,
-		"readinessLevel":    readinessLevelName,
-		"severityColor":     severityColor,
-		"gapTypeIcon":       gapTypeIcon,
-		"effortBars":        effortBars,
-		"formatScore":       formatScore,
-		"percentBar":        percentBar,
-		"competitorBar":     competitorBar,
-		"vendorColor":       vendorColor,
-		"sub":               func(a, b float64) float64 { return a - b },
-		"getCapability":     r.getCapability,
-		"getSegment":        r.getSegment,
-		"getVendor":         r.getVendor,
-		"topGaps":           topGaps,
-		"getVendorScore":    getVendorScore,
-		"formatWeight":      formatWeight,
+		"readinessColor": readinessColor,
+		"readinessLevel": readinessLevelName,
+		"severityColor":  severityColor,
+		"gapTypeIcon":    gapTypeIcon,
+		"effortBars":     effortBars,
+		"formatScore":    formatScore,
+		"percentBar":     percentBar,
+		"competitorBar":  competitorBar,
+		"vendorColor":    vendorColor,
+		"sub":            func(a, b float64) float64 { return a - b },
+		"getCapability":  r.getCapability,
+		"getSegment":     r.getSegment,
+		"getVendor":      r.getVendor,
+		"topGaps":        topGaps,
+		"getVendorScore": getVendorScore,
+		"formatWeight":   formatWeight,
 	}).Parse(htmlTemplate)
 	if err != nil {
 		return fmt.Errorf("failed to parse template: %w", err)
