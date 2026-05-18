@@ -38,6 +38,7 @@ func marketBar(score float64, color string) template.HTML {
 	if color == "" {
 		color = readinessColor(score)
 	}
+	//nolint:gosec // G203: Values are numeric (score) and hardcoded color strings, not user input
 	return template.HTML(fmt.Sprintf(
 		`<div class="market-bar"><div class="market-fill" style="width: %.0f%%; background-color: %s;"></div></div>`,
 		score, color))

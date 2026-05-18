@@ -149,6 +149,7 @@ func percentBar(score, max float64) template.HTML {
 		pct = 100
 	}
 	color := readinessColor(pct)
+	//nolint:gosec // G203: Values are numeric (pct) and hardcoded color strings, not user input
 	return template.HTML(fmt.Sprintf(
 		`<div class="progress-bar"><div class="progress-fill" style="width: %.0f%%; background-color: %s;"></div></div>`,
 		pct, color))
@@ -170,6 +171,7 @@ func competitorBar(score float64, isFocus bool) template.HTML {
 	if isFocus {
 		color = "#8b5cf6" // purple for focus vendor
 	}
+	//nolint:gosec // G203: Values are numeric (pct) and hardcoded color strings, not user input
 	return template.HTML(fmt.Sprintf(
 		`<div class="competitor-bar"><div class="competitor-fill" style="width: %.0f%%; background-color: %s;"></div></div>`,
 		pct, color))
@@ -186,6 +188,7 @@ func vendorColor(color string, isFocus bool, rank int) string {
 	}
 	colors := []string{"#3b82f6", "#22c55e", "#f97316", "#ef4444", "#6b7280"}
 	if rank > 0 && rank <= len(colors) {
+		//nolint:gosec // G602: Bounds checked above (rank > 0 && rank <= len(colors))
 		return colors[rank-1]
 	}
 	return "#6b7280"
