@@ -61,6 +61,8 @@ nav:
     - validate: cli/validate.md
   - Examples:
     - CRM Market: examples/crm-market.md
+  - Releases:
+    - v0.1.0: releases/v0.1.0.md
   - Development:
     - Contributing: development/contributing.md
     - Roadmap: specs/ROADMAP.md
