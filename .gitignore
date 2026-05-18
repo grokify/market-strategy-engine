@@ -1,0 +1,22 @@
+# Build outputs
+/mse
+/site/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test outputs
+coverage.out
+coverage.html
+*.test
+
+# Temporary files
+*.tmp
+*.bak
