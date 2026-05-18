@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/grokify/market-strategy-engine/schema/segment_weight.schema.json",
+  "$ref": "#/$defs/SegmentWeight",
+  "$defs": {
+    "SegmentWeight": {
+      "properties": {
+        "segmentId": {
+          "type": "string"
+        },
+        "capabilityId": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "number"
+        },
+        "rationale": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    }
+  }
+}

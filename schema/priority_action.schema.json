@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/grokify/market-strategy-engine/schema/priority_action.schema.json",
+  "$ref": "#/$defs/PriorityAction",
+  "$defs": {
+    "PriorityAction": {
+      "properties": {
+        "rank": {
+          "type": "integer"
+        },
+        "capabilityId": {
+          "type": "string"
+        },
+        "capabilityName": {
+          "type": "string"
+        },
+        "segmentId": {
+          "type": "string"
+        },
+        "segmentName": {
+          "type": "string"
+        },
+        "priority": {
+          "type": "number"
+        },
+        "gapType": {
+          "type": "string"
+        },
+        "currentScore": {
+          "type": "number"
+        },
+        "targetScore": {
+          "type": "number"
+        },
+        "impact": {
+          "type": "string"
+        },
+        "effort": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    }
+  }
+}

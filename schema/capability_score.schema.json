@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/grokify/market-strategy-engine/schema/capability_score.schema.json",
+  "$ref": "#/$defs/CapabilityScore",
+  "$defs": {
+    "CapabilityScore": {
+      "properties": {
+        "vendorId": {
+          "type": "string"
+        },
+        "capabilityId": {
+          "type": "string"
+        },
+        "score": {
+          "type": "number"
+        },
+        "rawValue": {
+          "type": "string"
+        },
+        "sourceId": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number"
+        },
+        "asOfDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    }
+  }
+}

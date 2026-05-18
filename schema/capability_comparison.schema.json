@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/grokify/market-strategy-engine/schema/capability_comparison.schema.json",
+  "$ref": "#/$defs/CapabilityComparison",
+  "$defs": {
+    "CapabilityComparison": {
+      "properties": {
+        "capabilityId": {
+          "type": "string"
+        },
+        "capabilityName": {
+          "type": "string"
+        },
+        "segmentWeight": {
+          "type": "number"
+        },
+        "vendorScores": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "type": "object"
+        },
+        "bestScore": {
+          "type": "number"
+        },
+        "bestVendorId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/grokify/market-strategy-engine/schema/gap_analysis.schema.json",
+  "$ref": "#/$defs/GapAnalysis",
+  "$defs": {
+    "GapAnalysis": {
+      "properties": {
+        "vendorId": {
+          "type": "string"
+        },
+        "capabilityId": {
+          "type": "string"
+        },
+        "segmentId": {
+          "type": "string"
+        },
+        "benchmarkScore": {
+          "type": "number"
+        },
+        "benchmarkVendorId": {
+          "type": "string"
+        },
+        "vendorScore": {
+          "type": "number"
+        },
+        "gap": {
+          "type": "number"
+        },
+        "segmentWeight": {
+          "type": "number"
+        },
+        "weightedGap": {
+          "type": "number"
+        },
+        "gapType": {
+          "type": "string"
+        },
+        "severity": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    }
+  }
+}

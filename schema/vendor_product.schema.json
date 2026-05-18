@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/grokify/market-strategy-engine/schema/vendor_product.schema.json",
+  "$ref": "#/$defs/VendorProduct",
+  "$defs": {
+    "VendorProduct": {
+      "properties": {
+        "vendorId": {
+          "type": "string"
+        },
+        "categoryId": {
+          "type": "string"
+        },
+        "productName": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "launchYear": {
+          "type": "integer"
+        },
+        "isPrimary": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    }
+  }
+}

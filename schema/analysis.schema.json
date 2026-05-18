@@ -1,0 +1,583 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/grokify/market-strategy-engine/schema/analysis.schema.json",
+  "$ref": "#/$defs/Analysis",
+  "$defs": {
+    "Analysis": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "focusVendorId": {
+          "type": "string"
+        },
+        "market": {
+          "$ref": "#/$defs/Market"
+        },
+        "segments": {
+          "items": {
+            "$ref": "#/$defs/Segment"
+          },
+          "type": "array"
+        },
+        "vendors": {
+          "items": {
+            "$ref": "#/$defs/Vendor"
+          },
+          "type": "array"
+        },
+        "vendorProducts": {
+          "items": {
+            "$ref": "#/$defs/VendorProduct"
+          },
+          "type": "array"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/DataSource"
+          },
+          "type": "array"
+        },
+        "weights": {
+          "items": {
+            "$ref": "#/$defs/SegmentWeight"
+          },
+          "type": "array"
+        },
+        "normalizations": {
+          "items": {
+            "$ref": "#/$defs/ScoreNormalization"
+          },
+          "type": "array"
+        },
+        "scores": {
+          "items": {
+            "$ref": "#/$defs/CapabilityScore"
+          },
+          "type": "array"
+        },
+        "gaps": {
+          "items": {
+            "$ref": "#/$defs/GapAnalysis"
+          },
+          "type": "array"
+        },
+        "readiness": {
+          "items": {
+            "$ref": "#/$defs/ReadinessScore"
+          },
+          "type": "array"
+        },
+        "priorities": {
+          "items": {
+            "$ref": "#/$defs/PriorityAction"
+          },
+          "type": "array"
+        },
+        "comparisons": {
+          "items": {
+            "$ref": "#/$defs/SegmentComparison"
+          },
+          "type": "array"
+        },
+        "computedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "Capability": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "gapType": {
+          "type": "string"
+        },
+        "scoreRubric": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "CapabilityComparison": {
+      "properties": {
+        "capabilityId": {
+          "type": "string"
+        },
+        "capabilityName": {
+          "type": "string"
+        },
+        "segmentWeight": {
+          "type": "number"
+        },
+        "vendorScores": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "type": "object"
+        },
+        "bestScore": {
+          "type": "number"
+        },
+        "bestVendorId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "CapabilityScore": {
+      "properties": {
+        "vendorId": {
+          "type": "string"
+        },
+        "capabilityId": {
+          "type": "string"
+        },
+        "score": {
+          "type": "number"
+        },
+        "rawValue": {
+          "type": "string"
+        },
+        "sourceId": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number"
+        },
+        "asOfDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "DataSource": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "publishedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "retrievedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "credibility": {
+          "type": "integer"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "GapAnalysis": {
+      "properties": {
+        "vendorId": {
+          "type": "string"
+        },
+        "capabilityId": {
+          "type": "string"
+        },
+        "segmentId": {
+          "type": "string"
+        },
+        "benchmarkScore": {
+          "type": "number"
+        },
+        "benchmarkVendorId": {
+          "type": "string"
+        },
+        "vendorScore": {
+          "type": "number"
+        },
+        "gap": {
+          "type": "number"
+        },
+        "segmentWeight": {
+          "type": "number"
+        },
+        "weightedGap": {
+          "type": "number"
+        },
+        "gapType": {
+          "type": "string"
+        },
+        "severity": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "Market": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "categories": {
+          "items": {
+            "$ref": "#/$defs/ProductCategory"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "PriorityAction": {
+      "properties": {
+        "rank": {
+          "type": "integer"
+        },
+        "capabilityId": {
+          "type": "string"
+        },
+        "capabilityName": {
+          "type": "string"
+        },
+        "segmentId": {
+          "type": "string"
+        },
+        "segmentName": {
+          "type": "string"
+        },
+        "priority": {
+          "type": "number"
+        },
+        "gapType": {
+          "type": "string"
+        },
+        "currentScore": {
+          "type": "number"
+        },
+        "targetScore": {
+          "type": "number"
+        },
+        "impact": {
+          "type": "string"
+        },
+        "effort": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "ProductCategory": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "capabilities": {
+          "items": {
+            "$ref": "#/$defs/Capability"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "ReadinessScore": {
+      "properties": {
+        "vendorId": {
+          "type": "string"
+        },
+        "segmentId": {
+          "type": "string"
+        },
+        "score": {
+          "type": "number"
+        },
+        "maxPossible": {
+          "type": "number"
+        },
+        "totalWeightedGap": {
+          "type": "number"
+        },
+        "criticalGaps": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "topGaps": {
+          "items": {
+            "$ref": "#/$defs/GapAnalysis"
+          },
+          "type": "array"
+        },
+        "interpretation": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "ScoreNormalization": {
+      "properties": {
+        "sourceId": {
+          "type": "string"
+        },
+        "capabilityId": {
+          "type": "string"
+        },
+        "inputType": {
+          "type": "string"
+        },
+        "inputMin": {
+          "type": "number"
+        },
+        "inputMax": {
+          "type": "number"
+        },
+        "categoryMapping": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "type": "object"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "Segment": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "minEndpoints": {
+          "type": "integer"
+        },
+        "maxEndpoints": {
+          "type": "integer"
+        },
+        "characteristics": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "SegmentComparison": {
+      "properties": {
+        "segmentId": {
+          "type": "string"
+        },
+        "segmentName": {
+          "type": "string"
+        },
+        "focusVendorId": {
+          "type": "string"
+        },
+        "vendorScores": {
+          "items": {
+            "$ref": "#/$defs/VendorSegmentScore"
+          },
+          "type": "array"
+        },
+        "capabilityComparisons": {
+          "items": {
+            "$ref": "#/$defs/CapabilityComparison"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "SegmentWeight": {
+      "properties": {
+        "segmentId": {
+          "type": "string"
+        },
+        "capabilityId": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "number"
+        },
+        "rationale": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "Vendor": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "color": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string"
+        },
+        "targetSegments": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "founded": {
+          "type": "integer"
+        },
+        "headquarters": {
+          "type": "string"
+        },
+        "isPublic": {
+          "type": "boolean"
+        },
+        "ticker": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "VendorProduct": {
+      "properties": {
+        "vendorId": {
+          "type": "string"
+        },
+        "categoryId": {
+          "type": "string"
+        },
+        "productName": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "launchYear": {
+          "type": "integer"
+        },
+        "isPrimary": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "VendorSegmentScore": {
+      "properties": {
+        "vendorId": {
+          "type": "string"
+        },
+        "vendorName": {
+          "type": "string"
+        },
+        "vendorColor": {
+          "type": "string"
+        },
+        "weightedScore": {
+          "type": "number"
+        },
+        "maxPossibleScore": {
+          "type": "number"
+        },
+        "normalizedScore": {
+          "type": "number"
+        },
+        "isFocusVendor": {
+          "type": "boolean"
+        },
+        "rank": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    }
+  }
+}

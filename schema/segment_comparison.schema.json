@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/grokify/market-strategy-engine/schema/segment_comparison.schema.json",
+  "$ref": "#/$defs/SegmentComparison",
+  "$defs": {
+    "CapabilityComparison": {
+      "properties": {
+        "capabilityId": {
+          "type": "string"
+        },
+        "capabilityName": {
+          "type": "string"
+        },
+        "segmentWeight": {
+          "type": "number"
+        },
+        "vendorScores": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "type": "object"
+        },
+        "bestScore": {
+          "type": "number"
+        },
+        "bestVendorId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "SegmentComparison": {
+      "properties": {
+        "segmentId": {
+          "type": "string"
+        },
+        "segmentName": {
+          "type": "string"
+        },
+        "focusVendorId": {
+          "type": "string"
+        },
+        "vendorScores": {
+          "items": {
+            "$ref": "#/$defs/VendorSegmentScore"
+          },
+          "type": "array"
+        },
+        "capabilityComparisons": {
+          "items": {
+            "$ref": "#/$defs/CapabilityComparison"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "VendorSegmentScore": {
+      "properties": {
+        "vendorId": {
+          "type": "string"
+        },
+        "vendorName": {
+          "type": "string"
+        },
+        "vendorColor": {
+          "type": "string"
+        },
+        "weightedScore": {
+          "type": "number"
+        },
+        "maxPossibleScore": {
+          "type": "number"
+        },
+        "normalizedScore": {
+          "type": "number"
+        },
+        "isFocusVendor": {
+          "type": "boolean"
+        },
+        "rank": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/grokify/market-strategy-engine/schema/vendor.schema.json",
+  "$ref": "#/$defs/Vendor",
+  "$defs": {
+    "Vendor": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "color": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string"
+        },
+        "targetSegments": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "founded": {
+          "type": "integer"
+        },
+        "headquarters": {
+          "type": "string"
+        },
+        "isPublic": {
+          "type": "boolean"
+        },
+        "ticker": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    }
+  }
+}
