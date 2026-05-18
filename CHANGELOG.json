@@ -1,0 +1,55 @@
+{
+  "irVersion": "1.0",
+  "project": "market-strategy-engine",
+  "repository": "https://github.com/grokify/market-strategy-engine",
+  "versioning": "semver",
+  "commitConvention": "conventional",
+  "maintainers": ["grokify"],
+  "releases": [
+    {
+      "version": "v0.1.0",
+      "date": "2026-05-18",
+      "commit": "6fec504",
+      "highlights": [
+        { "description": "Strategic capability gap analysis system for competitive market intelligence" },
+        { "description": "Single-market and multi-market analysis with weighted gap computation" },
+        { "description": "Dark-themed HTML reports with vendor color visualization" }
+      ],
+      "added": [
+        { "description": "Core data model types: Analysis, Market, ProductCategory, Capability, Segment, Vendor, SegmentWeight, CapabilityScore", "commit": "53c329a" },
+        { "description": "Gap analysis engine computing weighted gaps, readiness scores, and priority rankings", "commit": "25caae0" },
+        { "description": "Multi-market analysis engine for cross-market portfolio evaluation", "commit": "cc9b24d" },
+        { "description": "Color palette system with predefined palettes and vendor color support", "commit": "fc2e300" },
+        { "description": "HTML report generation with dark theme and responsive design", "commit": "6a7232c" },
+        { "description": "Multi-market HTML report with portfolio visualization", "commit": "34268fd" },
+        { "description": "Input validation package with comprehensive data integrity checks", "commit": "542fcba" },
+        { "description": "JSON Schema generation with embedded schemas for all model types", "commit": "f9f09be" },
+        { "description": "Cobra CLI with `analyze`, `multimarket`, `validate`, and `generate-schema` commands", "commit": "af584d2" },
+        { "description": "Readiness levels: Ready (80-100), Adjacent (60-79), Partial (40-59), Distant (0-39)", "commit": "25caae0" },
+        { "description": "Gap severity levels: Critical (≥2.5), High (1.5-2.5), Medium (0.5-1.5), Low (<0.5)", "commit": "25caae0" },
+        { "description": "Gap types: product, structural, perception", "commit": "53c329a" },
+        { "description": "Effort estimation based on gap type and size", "commit": "25caae0" },
+        { "description": "Vendor segment scores with competitive comparison", "commit": "25caae0" }
+      ],
+      "tests": [
+        { "description": "Unit tests for analysis engine including gap computation, readiness scoring, and severity levels", "commit": "6a8d6fb" },
+        { "description": "Unit tests for validation package covering weights, scores, and reference integrity", "commit": "6a8d6fb" },
+        { "description": "Unit tests for color palette functions", "commit": "6a8d6fb" }
+      ],
+      "documentation": [
+        { "description": "README with installation, quick start, and core concepts", "commit": "6fec504" },
+        { "description": "MkDocs documentation site with Material theme", "commit": "6fec504" },
+        { "description": "Getting started guides: installation, quickstart, first analysis", "commit": "6fec504" },
+        { "description": "Concept documentation: data model, gap analysis, readiness scoring, multi-market", "commit": "6fec504" },
+        { "description": "CLI reference for all commands", "commit": "6fec504" },
+        { "description": "CRM market example with complete analysis file", "commit": "6fec504" },
+        { "description": "Contributing guide", "commit": "6fec504" },
+        { "description": "Roadmap specification", "commit": "863ddbf" }
+      ],
+      "dependencies": [
+        { "description": "Add `github.com/spf13/cobra` for CLI framework", "commit": "c591e31" },
+        { "description": "Add `github.com/invopop/jsonschema` for JSON Schema generation", "commit": "c591e31" }
+      ]
+    }
+  ]
+}
